@@ -15,56 +15,27 @@ developers monitor and run their codes on the cloud .
 
 # Requirements for the Cloud
 
-Ubuntu 20.04 LTS
+Ubuntu 22.04 LTS
 General purpose t2.micro.
 30GB of Storage
 PrerequisitesCreate a AWS Account .
 
+# Steps
 
-Installing Process for ROS (After Cloud is hosted and
-running)
+- Step:1
+1. create IAM user "test_user". 
+2. Attach role or create policy for ec2 and ssh to ec2.
+3. Also attch role for cloudwatch to monitoring ec2. 
 
-Installation ROS
+- Step:2 
+1. Lauch EC2 instance with ubuntu 20.04 free version
+2. During ec2 creation attach EBS.
+3. Enable cloudwatch monitoring for EC2 creation.
+After lauching test "ssh" and "cloudwatch" monitoring.
 
-1. Configure your Ubuntu repositories
+- Step:3
+After successful remote ssh to ec2.
 
-2. Setup your sources.list
-
-3. Setup your computer to accept software from packages.ros.org.
-```
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-```
-4. Set up your keys
-If you haven't already installed curl
-```
-sudo apt install curl 
-```
-```
-curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add-
-```
-
-Installation
-
-5.First, make sure your Debian package index is up-to-date:
-
-```
-sudo apt update
-```
-
-6. Now pick how much of ROS you would like to install.
-
-Desktop-Full Install: (Recommended) : Everything in Desktop plus 2D/3D simulators and 2D/3D perception packages
-
-```
-sudo apt install ros-noetic-desktop-full
-```
-or click here
-
-7. Environment setup
-
-You must source this script in every bash terminal you use ROS in.
-
-```
-source /opt/ros/noetic/setup.bash
-```
-
+1. Run apt-get update and apt-get upgrade
+2. Run script for ros installation step by step.
+Verify installation and cloudwatch monitoring. 

@@ -1,0 +1,15 @@
+ubuntu@ip-172-31-14-54:~$ history
+    1  sudo apt update
+    2  sudo apt install -y curl gnupg2 lsb-release
+    3  sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+    4  echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2-latest.list
+    5  sudo apt update
+    6  sudo apt install -y ros-humble-desktop
+    7  echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+    8  source ~/.bashrc
+    9  sudo apt install -y python3-colcon-common-extensions
+   10  sudo apt install -y python3-argcomplete
+   11  source /opt/ros/humble/setup.bash
+   12  sudo apt install python3-rospkg
+   13  rosversion -d
+   14  history

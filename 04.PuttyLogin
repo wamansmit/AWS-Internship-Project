@@ -1,0 +1,55 @@
+To SSH into an EC2 instance using PuTTY, follow these steps:
+
+1. **Download and Install PuTTY:**
+   - Download PuTTY from the official website: [PuTTY Download Page](https://www.putty.org/).
+   - Install PuTTY on your Windows computer.
+
+2. **Convert PEM to PPK (if needed):**
+   - AWS provides a PEM file when you create an EC2 instance. PuTTY uses PPK format for private keys.
+   - Open PuTTYgen (installed with PuTTY).
+   - Click on "Load" and select the PEM file you downloaded from AWS.
+   - Click "Save private key" and save the PPK file.
+
+3. **Open PuTTY and Configure the Session:**
+   - Open PuTTY.
+   - In the "Host Name (or IP address)" field, enter your EC2 instance's public DNS (e.g., `ec2-12-34-56-78.compute-1.amazonaws.com`).
+   - Ensure the "Port" field is set to `22`.
+   - Under "Connection type," select `SSH`.
+
+4. **Specify the Private Key for Authentication:**
+   - In the PuTTY configuration window, expand the "SSH" section in the left-hand tree and then click on "Auth."
+   - Under "Authentication parameters," click "Browse" and select the PPK file you saved earlier.
+
+5. **Save the Session (optional):**
+   - To save these settings for future use, go back to the "Session" category in the left-hand tree.
+   - In the "Saved Sessions" field, enter a name for this session (e.g., "MyEC2Instance").
+   - Click "Save."
+
+6. **Connect to the EC2 Instance:**
+   - Click "Open" to initiate the connection.
+   - The first time you connect, you may see a security alert about the server's host key not being cached in the registry. Click "Yes" to proceed.
+   - When prompted, enter the username. For Amazon Linux, the default username is `ec2-user`. For Ubuntu, it’s `ubuntu`. Other distributions have different default usernames (e.g., `centos` for CentOS, `admin` for Debian).
+
+7. **Start Using the EC2 Instance:**
+   - You should now be logged into your EC2 instance.
+
+### Example of Full Configuration:
+
+1. **Convert PEM to PPK:**
+   - Open PuTTYgen, click "Load," select your `.pem` file, click "Save private key," and save the `.ppk` file.
+
+2. **PuTTY Configuration:**
+   - **Session:**
+     - Host Name: `ec2-12-34-56-78.compute-1.amazonaws.com`
+     - Port: `22`
+     - Connection type: `SSH`
+   - **SSH > Auth:**
+     - Private key file for authentication: `[Browse to your .ppk file]`
+   - **Save session:** (optional)
+     - Saved Sessions: `MyEC2Instance`
+     - Click "Save"
+   - **Connect:**
+     - Click "Open"
+     - Username: `ec2-user` (or the appropriate username for your instance)
+
+By following these steps, you should be able to SSH into your EC2 instance using PuTTY.

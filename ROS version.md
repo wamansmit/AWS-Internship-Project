@@ -26,6 +26,6 @@
 - **Target Ubuntu Version**: Ubuntu 20.04 LTS
 - **Description**: Another LTS version, known for stability and long-term support.
 
-### ROS 2 Rolling Ridley
+### ROS 2 Rolling
 - **Target Ubuntu Version**: Continuously updated, not tied to any particular Ubuntu release.
 - **Description**: A development distribution suitable for users who need the latest features and updates.
